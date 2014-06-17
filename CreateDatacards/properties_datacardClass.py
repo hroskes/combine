@@ -163,8 +163,10 @@ class properties_datacardClass:
             lowside = 350.0
             highside = 1400.0
         
-        self.low_M = max( (self.mH - 20.*self.windowVal), lowside)
-        self.high_M = min( (self.mH + 15.*self.windowVal), highside)
+        #self.low_M = max( (self.mH - 20.*self.windowVal), lowside)
+        #self.high_M = min( (self.mH + 15.*self.windowVal), highside)
+        self.low_M = 80
+        self.high_M = 100
        
         if (self.channel == self.ID_4mu): self.appendName = '4mu'
         elif (self.channel == self.ID_4e): self.appendName = '4e'
