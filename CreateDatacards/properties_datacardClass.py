@@ -195,9 +195,9 @@ class properties_datacardClass:
         x = ROOT.RooRealVar(x_name,x_name,-1.,1.)
         x.setBins(bins)
 
-        D1Name = "CMS_zz4l_KD1"
-        D2Name = "CMS_zz4l_KD2"
-        D3Name = "CMS_zz4l_smd"
+        D1Name = "CMS_zz4l_KD1"     #mzz
+        D2Name = "CMS_zz4l_KD2"     #dummy, always = 0
+        D3Name = "CMS_zz4l_smd"     #D_bkg_kin
 
         self.LUMI = ROOT.RooRealVar("LUMI_{0:.0f}".format(self.sqrts),"LUMI_{0:.0f}".format(self.sqrts),self.lumi)
         self.LUMI.setConstant(True)

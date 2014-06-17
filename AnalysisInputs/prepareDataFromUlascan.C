@@ -334,7 +334,8 @@ int convertTreeForDatacards(TString inFile, TString outfile, bool useJET, bool V
   TFile* newFile  = new TFile(outfile, "RECREATE");
   newFile->cd();
   TTree* newTree = new TTree("data_obs","data_obs"); 
-  Double_t CMS_zz4l_mass, melaLD, CMS_zz4l_massErr, CMS_zz4l_massRelErr;
+  Double_t CMS_zz4l_mass, CMS_zz4l_mass2, melaLD, CMS_zz4l_massErr, CMS_zz4l_massRelErr;
+  Double_t dummyKD2 = 0;
   Double_t pt = -99, Fisher = -99;
 
   newTree->Branch("CMS_zz4l_mass",&CMS_zz4l_mass,"CMS_zz4l_mass/D");
@@ -346,13 +347,13 @@ int convertTreeForDatacards(TString inFile, TString outfile, bool useJET, bool V
 
   //Spin Analysis Branches
 //			newTree->Branch("CMS_zz4l_D_g1_vs_g2_phi0",&D_g2);
-			newTree->Branch("CMS_zz4l_KD2",&D_g2);
+			newTree->Branch("CMS_zz4l_KD2",&dummyKD2);
 			newTree->Branch("CMS_zz4l_D_g1_vs_g4_phi0",&D_g4);
 			newTree->Branch("CMS_zz4l_D_g2int_phi0",&D_g2int);
 			newTree->Branch("CMS_zz4l_D_g4int_phi0",&D_g4int);
 			newTree->Branch("CMS_zz4l_D_g2int_phi90",&D_g2int_perp);
 			newTree->Branch("CMS_zz4l_D_g4int_phi90",&D_g4int_perp);
-			newTree->Branch("CMS_zz4l_KD1",&D_g1q2);
+			newTree->Branch("CMS_zz4l_KD1",&CMS_zz4l_mass2);
 //			newTree->Branch("CMS_zz4l_D_g1Q2_phi0",&D_g1q2);
 			newTree->Branch("CMS_zz4l_D_g1Q2int_phi0",&D_g1q2int);
 
@@ -365,8 +366,8 @@ int convertTreeForDatacards(TString inFile, TString outfile, bool useJET, bool V
 			newTree->Branch("CMS_zz4l_D_ZG_PSint",&D_ZG_PSint);
 			newTree->Branch("CMS_zz4l_D_GG_PSint",&D_GG_PSint);
 
-			newTree->Branch("CMS_zz4l_smd",&D_bkg);
-			newTree->Branch("CMS_zz4l_D_bkg_kin",&D_bkg_kin);
+			newTree->Branch("CMS_zz4l_smd",&D_bkg_kin);
+			newTree->Branch("CMS_zz4l_D_bkg",&D_bkg);
 			newTree->Branch("CMS_zz4l_D_bkg_ScaleUp",&D_bkg_ScaleUp);
 			newTree->Branch("CMS_zz4l_D_bkg_ScaleDown",&D_bkg_ScaleDown);
 			newTree->Branch("CMS_zz4l_D_bkg_ResUp",&D_bkg_ResUp);
@@ -449,6 +450,7 @@ int convertTreeForDatacards(TString inFile, TString outfile, bool useJET, bool V
 			int lepIdOrdered[4]={ Lep1Id,Lep2Id,Lep3Id,Lep4Id };
 
     CMS_zz4l_mass = double(mzz);
+    CMS_zz4l_mass2 = double(mzz);
     CMS_zz4l_massErr = double(mzzErr);
     CMS_zz4l_massRelErr = double(mzzErr/mzz);
     //pseudomelaLD = pseudomela;
