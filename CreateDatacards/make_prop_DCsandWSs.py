@@ -70,7 +70,7 @@ def processCmd(cmd):
 def creationLoop(directory):
     global opt, args
 
-    startMass=[ 125.6]
+    startMass=[ 91.1876]
     stepSizes=[ 0.1]
     endVal=[     1]
 
