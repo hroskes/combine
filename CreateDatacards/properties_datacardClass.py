@@ -438,55 +438,55 @@ class properties_datacardClass:
         sig_ZH_HM.setBufferFraction(0.2)
         sig_ttH_HM.setBufferFraction(0.2)
 
-        ## -------------------- 2D SIGNAL SHAPES FOR PROPERTIES ------------------------- ##
+        ## -------------------- 2D SIGNAL SHAPES FOR PROPERTIES ------------------------- ##  ## START LOOKING HERE ##
 
         print '2D signal shapes for Properties'
         templateSigName = "{0}_{2:.0f}TeV/{1}_{0}.root".format(self.templateDir,self.appendName, self.sqrts)#templates3D_AdapSmoothMirror_Signal_{1}.root
         sigTempFile = ROOT.TFile(templateSigName)
-        Sig_T_1 = sigTempFile.Get("template0PlusAdapSmoothMirror")
-        Sig_T_2 = sigTempFile.Get("template0MinusAdapSmoothMirror")
-        Sig_T_4 = sigTempFile.Get("templateIntAdapSmoothMirror")
-
+        Sig_T_1 = sigTempFile.Get("templateH")
+        Sig_T_2 = sigTempFile.Get("templateZ")
+        #Sig_T_4 = sigTempFile.Get("templateIntAdapSmoothMirror")
+        #"""
         templateSigName = "{0}_{2:.0f}TeV/{1}_{0}_ResScaleUp.root".format(self.templateDir,self.appendName, self.sqrts)
         sigTempFile_ResUp = ROOT.TFile(templateSigName)
-        Sig_T_1_ResUp = sigTempFile_ResUp.Get("template0PlusAdapSmoothMirror")
-        Sig_T_2_ResUp = sigTempFile_ResUp.Get("template0MinusAdapSmoothMirror")
-        Sig_T_4_ResUp = sigTempFile_ResUp.Get("templateIntAdapSmoothMirror")
+        Sig_T_1_ResUp = sigTempFile_ResUp.Get("templateH")
+        Sig_T_2_ResUp = sigTempFile_ResUp.Get("templateZ")
+        #Sig_T_4_ResUp = sigTempFile_ResUp.Get("templateIntAdapSmoothMirror")
         templateSigName = "{0}_{2:.0f}TeV/{1}_{0}_ResScaleDown.root".format(self.templateDir,self.appendName, self.sqrts)
         sigTempFile_ResDown = ROOT.TFile(templateSigName)
-        Sig_T_1_ResDown = sigTempFile_ResDown.Get("template0PlusAdapSmoothMirror")
-        Sig_T_2_ResDown = sigTempFile_ResDown.Get("template0MinusAdapSmoothMirror")
-        Sig_T_4_ResDown = sigTempFile_ResDown.Get("templateIntAdapSmoothMirror")
+        Sig_T_1_ResDown = sigTempFile_ResDown.Get("templateH")
+        Sig_T_2_ResDown = sigTempFile_ResDown.Get("templateZ")
+        #Sig_T_4_ResDown = sigTempFile_ResDown.Get("templateIntAdapSmoothMirror")
         #templateSigName = "{0}/{1}_{0}_ScaleUp.root".format(self.templateDir,self.appendName)
         #sigTempFile_ScaleUp = ROOT.TFile(templateSigName)
-        #Sig_T_1_ScaleUp = sigTempFile_ScaleUp.Get("template0PlusAdapSmoothMirror")
-        #Sig_T_2_ScaleUp = sigTempFile_ScaleUp.Get("template0MinusAdapSmoothMirror")
+        #Sig_T_1_ScaleUp = sigTempFile_ScaleUp.Get("templateH")
+        #Sig_T_2_ScaleUp = sigTempFile_ScaleUp.Get("templateZ")
         #Sig_T_4_ScaleUp = sigTempFile_ScaleUp.Get("templateIntAdapSmoothMirror")
         #templateSigName = "{0}/{1}_{0}_ScaleDown.root".format(self.templateDir,self.appendName)
         #sigTempFile_ScaleDown = ROOT.TFile(templateSigName)
-        #Sig_T_1_ScaleDown = sigTempFile_ScaleDown.Get("template0PlusAdapSmoothMirror")
-        #Sig_T_2_ScaleDown = sigTempFile_ScaleDown.Get("template0MinusAdapSmoothMirror")
+        #Sig_T_1_ScaleDown = sigTempFile_ScaleDown.Get("templateH")
+        #Sig_T_2_ScaleDown = sigTempFile_ScaleDown.Get("templateZ")
         #Sig_T_4_ScaleDown = sigTempFile_ScaleDown.Get("templateIntAdapSmoothMirror")
-
+        #"""
 #        templateSigName = "{0}/{1}_{0}_ResUp.root".format(self.templateDir,self.appendName)
 #        sigTempFile_ResUp = ROOT.TFile(templateSigName)
-#        Sig_T_1_ResUp = sigTempFile.Get("template0PlusAdapSmoothMirror")
-#        Sig_T_2_ResUp = sigTempFile.Get("template0MinusAdapSmoothMirror")
+#        Sig_T_1_ResUp = sigTempFile.Get("templateH")
+#        Sig_T_2_ResUp = sigTempFile.Get("templateZ")
 #        Sig_T_4_ResUp = sigTempFile.Get("templateIntAdapSmoothMirror")
 #        templateSigName = "{0}/{1}_{0}_ResDown.root".format(self.templateDir,self.appendName)
 #        sigTempFile_ResDown = ROOT.TFile(templateSigName)
-#        Sig_T_1_ResDown = sigTempFile.Get("template0PlusAdapSmoothMirror")
-#        Sig_T_2_ResDown = sigTempFile.Get("template0MinusAdapSmoothMirror")
+#        Sig_T_1_ResDown = sigTempFile.Get("templateH")
+#        Sig_T_2_ResDown = sigTempFile.Get("templateZ")
 #        Sig_T_4_ResDown = sigTempFile.Get("templateIntAdapSmoothMirror")
 #        templateSigName = "{0}/{1}_{0}_ScaleUp.root".format(self.templateDir,self.appendName)
 #        sigTempFile_ScaleUp = ROOT.TFile(templateSigName)
-#        Sig_T_1_ScaleUp = sigTempFile.Get("template0PlusAdapSmoothMirror")
-#        Sig_T_2_ScaleUp = sigTempFile.Get("template0MinusAdapSmoothMirror")
+#        Sig_T_1_ScaleUp = sigTempFile.Get("templateH")
+#        Sig_T_2_ScaleUp = sigTempFile.Get("templateZ")
 #        Sig_T_4_ScaleUp = sigTempFile.Get("templateIntAdapSmoothMirror")
 #        templateSigName = "{0}/{1}_{0}_ScaleDown.root".format(self.templateDir,self.appendName)
 #        sigTempFile_ScaleDown = ROOT.TFile(templateSigName)
-#        Sig_T_1_ScaleDown = sigTempFile.Get("template0PlusAdapSmoothMirror")
-#        Sig_T_2_ScaleDown = sigTempFile.Get("template0MinusAdapSmoothMirror")
+#        Sig_T_1_ScaleDown = sigTempFile.Get("templateH")
+#        Sig_T_2_ScaleDown = sigTempFile.Get("templateZ")
 #        Sig_T_4_ScaleDown = sigTempFile.Get("templateIntAdapSmoothMirror")
 #        Sig_T_1 = sigTempFile.Get("template3D_0PlusAdapSmoothMirror{0}".format(self.getVariable("_{0}".format(self.appendName),"",self.channel != self.ID_2e2mu)))
 #        Sig_T_2 = sigTempFile.Get("template3D_0MinusAdapSmoothMirror{0}".format(self.getVariable("_{0}".format(self.appendName),"",self.channel != self.ID_2e2mu)))
@@ -557,29 +557,31 @@ class properties_datacardClass:
 
         Sig_T_1_hist = ROOT.RooDataHist ("T_1_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_1)
         Sig_T_2_hist = ROOT.RooDataHist ("T_2_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_2)
-        Sig_T_4_hist = ROOT.RooDataHist ("T_3_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4)
+        #Sig_T_4_hist = ROOT.RooDataHist ("T_3_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4)
+        #"""
         Sig_T_1_ResUp_hist = ROOT.RooDataHist ("T_1_ResUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_1_ResUp)
         Sig_T_2_ResUp_hist = ROOT.RooDataHist ("T_2_ResUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_2_ResUp)
-        Sig_T_4_ResUp_hist = ROOT.RooDataHist ("T_3_ResUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4_ResUp)
+        #Sig_T_4_ResUp_hist = ROOT.RooDataHist ("T_3_ResUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4_ResUp)
         Sig_T_1_ResDown_hist = ROOT.RooDataHist ("T_1_ResDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_1_ResDown)
         Sig_T_2_ResDown_hist = ROOT.RooDataHist ("T_2_ResDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_2_ResDown)
-        Sig_T_4_ResDown_hist = ROOT.RooDataHist ("T_3_ResDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4_ResDown)
+        #Sig_T_4_ResDown_hist = ROOT.RooDataHist ("T_3_ResDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4_ResDown)
         #Sig_T_1_ScaleUp_hist = ROOT.RooDataHist ("T_1_ScaleUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_1_ScaleUp)
         #Sig_T_2_ScaleUp_hist = ROOT.RooDataHist ("T_2_ScaleUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_2_ScaleUp)
         #Sig_T_4_ScaleUp_hist = ROOT.RooDataHist ("T_3_ScaleUp_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4_ScaleUp)
         #Sig_T_1_ScaleDown_hist = ROOT.RooDataHist ("T_1_ScaleDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_1_ScaleDown)
         #Sig_T_2_ScaleDown_hist = ROOT.RooDataHist ("T_2_ScaleDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_2_ScaleDown)
         #Sig_T_4_ScaleDown_hist = ROOT.RooDataHist ("T_3_ScaleDown_hist","", ROOT.RooArgList(D1,D2,D3),Sig_T_4_ScaleDown)
-
+        #"""
         Sig_T_1_histfunc = ROOT.RooHistFunc ("T_1_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_1_hist)
         Sig_T_2_histfunc = ROOT.RooHistFunc ("T_2_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_2_hist)
-        Sig_T_4_histfunc = ROOT.RooHistFunc ("T_3_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_hist)
+        #Sig_T_4_histfunc = ROOT.RooHistFunc ("T_3_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_hist)
+        #"""
         Sig_T_1_ResUp_histfunc = ROOT.RooHistFunc ("T_1_ResUp_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_1_ResUp_hist)
         Sig_T_2_ResUp_histfunc = ROOT.RooHistFunc ("T_2_ResUp_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_2_ResUp_hist)
-        Sig_T_4_ResUp_histfunc = ROOT.RooHistFunc ("T_3_ResUp_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_ResUp_hist)
+        #Sig_T_4_ResUp_histfunc = ROOT.RooHistFunc ("T_3_ResUp_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_ResUp_hist)
         Sig_T_1_ResDown_histfunc = ROOT.RooHistFunc ("T_1_ResDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_1_ResDown_hist)
         Sig_T_2_ResDown_histfunc = ROOT.RooHistFunc ("T_2_ResDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_2_ResDown_hist)
-        Sig_T_4_ResDown_histfunc = ROOT.RooHistFunc ("T_3_ResDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_ResDown_hist)
+        #Sig_T_4_ResDown_histfunc = ROOT.RooHistFunc ("T_3_ResDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_ResDown_hist)
 
         #Sig_T_1_ScaleUp_histfunc = ROOT.RooHistFunc ("T_1_ScaleUp_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_1_ScaleUp_hist)
         #Sig_T_2_ScaleUp_histfunc = ROOT.RooHistFunc ("T_2_ScaleUp_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_2_ScaleUp_hist)
@@ -587,8 +589,11 @@ class properties_datacardClass:
         #Sig_T_1_ScaleDown_histfunc = ROOT.RooHistFunc ("T_1_ScaleDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_1_ScaleDown_hist)
         #Sig_T_2_ScaleDown_histfunc = ROOT.RooHistFunc ("T_2_ScaleDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_2_ScaleDown_hist)
         #Sig_T_4_ScaleDown_histfunc = ROOT.RooHistFunc ("T_3_ScaleDown_histfunc","", ROOT.RooArgSet(D1,D2,D3),Sig_T_4_ScaleDown_hist)
+        #"""
         ggHpdfName = "ggH_RooSpinZeroPdf_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
-        ggHpdf = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName,ggHpdfName,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_histfunc,Sig_T_2_histfunc,Sig_T_4_histfunc))
+        ggHpdf = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName,ggHpdfName,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_histfunc,Sig_T_2_histfunc
+        #                                  ,Sig_T_4_histfunc
+        ))
    
          
         #r_fa3 = ggHpdf.createIntegral(ROOT.RooArgSet(D1,D2,D3))
@@ -597,27 +602,33 @@ class properties_datacardClass:
         #normfa3 = ROOT.RooConstVar ("normfa3","normfa3",ggHpdf.createIntegral(ROOT.RooArgSet(D1,D2,D3)).getVal())
         T1_integralName = "normt1_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         T2_integralName = "normt2_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
-        T4_integralName = "normt4_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
+        #T4_integralName = "normt4_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         T1_integral = ROOT.RooConstVar (T1_integralName,T1_integralName,Sig_T_1.Integral())
         T2_integral = ROOT.RooConstVar (T2_integralName,T2_integralName,Sig_T_2.Integral())
-        T4_integral = ROOT.RooConstVar (T4_integralName,T4_integralName,Sig_T_4.Integral())
-        r_fai_norm = ROOT.RooFormulaVar("ggH_norm","ggH_norm","( (1-abs(@0))*@1+abs(@0)*@2 + sign(@0)*sqrt (abs(@0)*(1-abs(@0)))*@3 )/@1",RooArgList(x,T1_integral,T2_integral, T4_integral))
+        #T4_integral = ROOT.RooConstVar (T4_integralName,T4_integralName,Sig_T_4.Integral())
+        r_fai_norm = ROOT.RooFormulaVar("ggH_norm","ggH_norm","( (1-abs(@0))*@1+abs(@0)*@2 + sign(@0)*sqrt (abs(@0)*(1-abs(@0)))*@3 )/@1",RooArgList(x,T1_integral,T2_integral
+        #                                                       , T4_integral
+        ))
         #ggHpdf = ROOT.RooHistPdf(ggHpdfName,ggHpdfName,RooArgSet(D1,D2,D3),Sig_T_1_hist)
         #ggHpdf.Print("v")
         #ggHpdfName_syst1Up = "ggH_RooSpinZeroPdf_ResUp_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         #ggHpdf_syst1Up = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst1Up,ggHpdfName_syst1Up,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_histfunc,Sig_T_2_histfunc,Sig_T_4_histfunc))
         #ggHpdfName_syst1Down = "ggH_RooSpinZeroPdf_ResDown_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         #ggHpdf_syst1Down = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst1Down,ggHpdfName_syst1Down,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_histfunc,Sig_T_2_histfunc,Sig_T_4_histfunc))
-
+        #"""
         #ggHpdfName_syst2Up = "ggH_RooSpinZeroPdf_ScaleUp_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         #ggHpdf_syst2Up = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst2Up,ggHpdfName_syst2Up,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_histfunc,Sig_T_2_histfunc,Sig_T_4_histfunc))
         #ggHpdfName_syst2Down = "ggH_RooSpinZeroPdf_ScaleDown_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         #ggHpdf_syst2Down = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst2Down,ggHpdfName_syst2Down,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_histfunc,Sig_T_2_histfunc,Sig_T_4_histfunc))
         ggHpdfName_syst1Up = "ggH_RooSpinZeroPdf_ResUp_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
-        ggHpdf_syst1Up = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst1Up,ggHpdfName_syst1Up,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_ResUp_histfunc,Sig_T_2_ResUp_histfunc,Sig_T_4_ResUp_histfunc))
+        ggHpdf_syst1Up = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst1Up,ggHpdfName_syst1Up,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_ResUp_histfunc,Sig_T_2_ResUp_histfunc
+        #                                          ,Sig_T_4_ResUp_histfunc
+        ))
         ggHpdfName_syst1Down = "ggH_RooSpinZeroPdf_ResDown_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
-        ggHpdf_syst1Down = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst1Down,ggHpdfName_syst1Down,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_ResDown_histfunc,Sig_T_2_ResDown_histfunc,Sig_T_4_ResDown_histfunc))
-
+        ggHpdf_syst1Down = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst1Down,ggHpdfName_syst1Down,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_ResDown_histfunc,Sig_T_2_ResDown_histfunc
+        #                                            ,Sig_T_4_ResDown_histfunc
+        ))
+        #"""
         #ggHpdfName_syst2Up = "ggH_RooSpinZeroPdf_ScaleUp_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         #ggHpdf_syst2Up = ROOT.HZZ4L_RooSpinZeroPdf(ggHpdfName_syst2Up,ggHpdfName_syst2Up,D1,D2,D3,x,ROOT.RooArgList(Sig_T_1_ScaleUp_histfunc,Sig_T_2_ScaleUp_histfunc,Sig_T_4_ScaleUp_histfunc))
         #ggHpdfName_syst2Down = "ggH_RooSpinZeroPdf_ScaleDown_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
@@ -911,13 +922,13 @@ class properties_datacardClass:
         ZjetsTempDataHist = ROOT.RooDataHist(TemplateName,TemplateName,ROOT.RooArgList(D1,D2,D3),ZjetsTemplate)
         PdfName = "Zjets_TemplatePdf_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         ZjetsTemplatePdf = ROOT.RooHistPdf(PdfName,PdfName,ROOT.RooArgSet(D1,D2,D3),ZjetsTempDataHist)
-
+        """
         ZjetsTemplateDown = bkgTempFile.Get("T_mirror")
         TemplateName = "ZjetsTempDownDataHist_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         ZjetsTempDataHistDown = ROOT.RooDataHist(TemplateName,TemplateName,ROOT.RooArgList(D1,D2,D3),ZjetsTemplateDown)
         PdfName = "Zjets_TemplatDownePdf_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         ZjetsTemplatePdfDown = ROOT.RooHistPdf(PdfName,PdfName,ROOT.RooArgSet(D1,D2,D3),ZjetsTempDataHistDown)
-
+        """
         funcList_zjets = ROOT.RooArgList()
         morphBkgVarName =  "CMS_zz4l_smd_zjets_bkg_{0:.0f}".format(self.channel)
         alphaMorphBkg = ROOT.RooRealVar(morphBkgVarName,morphBkgVarName,0,-20,20)
@@ -926,7 +937,7 @@ class properties_datacardClass:
         if(self.bkgMorph):
             funcList_zjets.add(ZjetsTemplatePdf)
             funcList_zjets.add(qqZZTemplatePdf)
-            funcList_zjets.add(ZjetsTemplatePdfDown)
+            #funcList_zjets.add(ZjetsTemplatePdfDown)
             alphaMorphBkg.setConstant(False)
             morphVarListBkg.add(alphaMorphBkg)
         else:
@@ -935,7 +946,7 @@ class properties_datacardClass:
         MorphName = "ZX_TemplateMorphPdf_{0:.0f}_{1:.0f}".format(self.channel,self.sqrts)
         #qqZZTemplateMorphPdf = ROOT.FastVerticalInterpHistPdf3D(MorphName,MorphName,D1,D2,D3,False,ROOT.RooArgList(qqZZTemplatePdf),ROOT.RooArgList(),1.0,1)
         #ggZZTemplateMorphPdf = ROOT.FastVerticalInterpHistPdf3D(MorphName,MorphName,D1,D2,D3,False,ROOT.RooArgList(ggZZTemplatePdf),ROOT.RooArgList(),1.0,1)
-        ZjetsTemplateMorphPdf = ROOT.FastVerticalInterpHistPdf3D(MorphName,MorphName,D1,D2,D3,False,funcList_zjets,morphVarListBkg,1.0,1)
+        #ZjetsTemplateMorphPdf = ROOT.FastVerticalInterpHistPdf3D(MorphName,MorphName,D1,D2,D3,False,funcList_zjets,morphVarListBkg,1.0,1)
         
         
 
@@ -1510,6 +1521,7 @@ class properties_datacardClass:
         #getattr(w,'import')(Sig_T_4_ResDown_hist,0 )
         ggHpdf.SetNameTitle("ggH","ggH")
         getattr(w,'import')(ggHpdf, ROOT.RooFit.RecycleConflictNodes())
+        #"""
         ggHpdf_syst1Up.SetNameTitle("ggH_Res{0}Up".format(self.appendName),"ggH_Res{0}Up".format(self.appendName))
         getattr(w,'import')(ggHpdf_syst1Up, ROOT.RooFit.RecycleConflictNodes())
         ggHpdf_syst1Down.SetNameTitle("ggH_Res{0}Down".format(self.appendName),"ggH_Res{0}Down".format(self.appendName))
@@ -1524,15 +1536,15 @@ class properties_datacardClass:
         #getattr(w,'import')(Sig_T_1,"T_1_{0}_{1}".format(self.appendName,self.sqrts)) 
         #getattr(w,'import')(Sig_T_2,"T_2_{0}_{1}".format(self.appendName,self.sqrts))
         #getattr(w,'import')(Sig_T_4,"T_3_{0}_{1}".format(self.appendName,self.sqrts))
-
+        #"""
         qqZZTemplatePdf.SetNameTitle("bkg_qqzz","bkg_qqzz")
         ggZZTemplatePdf.SetNameTitle("bkg_ggzz","bkg_ggzz")
-        #ZjetsTemplatePdf.SetNameTitle("bkg_zjets","bkg_zjets")
-        ZjetsTemplateMorphPdf.SetNameTitle("bkg_zjets","bkg_zjets")
+        ZjetsTemplatePdf.SetNameTitle("bkg_zjets","bkg_zjets")
+        #ZjetsTemplateMorphPdf.SetNameTitle("bkg_zjets","bkg_zjets")
         getattr(w,'import')(qqZZTemplatePdf, ROOT.RooFit.RecycleConflictNodes())
         getattr(w,'import')(ggZZTemplatePdf, ROOT.RooFit.RecycleConflictNodes())
-        getattr(w,'import')(ZjetsTemplateMorphPdf, ROOT.RooFit.RecycleConflictNodes())
-        #getattr(w,'import')(ZjetsTemplatePdf, ROOT.RooFit.RecycleConflictNodes())
+        #getattr(w,'import')(ZjetsTemplateMorphPdf, ROOT.RooFit.RecycleConflictNodes())
+        getattr(w,'import')(ZjetsTemplatePdf, ROOT.RooFit.RecycleConflictNodes())
         #qqZZTemplateMorphPdf.SetNameTitle("bkg_qqzzMorph","bkg_qqzzMorph")
         #getattr(w,'import')(qqZZTemplateMorphPdf, ROOT.RooFit.RecycleConflictNodes())
         #testpdf.SetNameTitle("testpdf","testpdf")
