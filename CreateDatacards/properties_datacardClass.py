@@ -109,8 +109,8 @@ class properties_datacardClass:
         self.lumi = theInputs['lumi']
         self.sqrts = theInputs['sqrts']
         self.channel = theInputs['decayChannel']
-        self.bkgMorph = #theInputs['useCMS_zz4l_zjet']
-                        false
+        #self.bkgMorph = theInputs['useCMS_zz4l_zjet']
+        self.bkgMorph = False
         self.outputDir = theOutputDir
         self.templateDir = theTemplateDir
 
