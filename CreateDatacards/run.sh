@@ -33,6 +33,13 @@ then
     fi
     echo "root -l -b -q make2dPlot.C+" >> forsshtolxplus.txt
     echo "scp -r templates2DHeshy_*TeV hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards" >> forsshtolxplus.txt
+    if [ $extent -ge 77 ]
+    then
+        echo "cd /afs/cern.ch/user/h/hroskes/work/powheg/mHequalsmZ/combine/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs" >> forsshtolxplus.txt
+        echo "root -l -b -q prepareDataFromUlascan.C+" >> forsshtolxplus.txt
+        echo "cd ../CreateDatacards" >> forsshtolxplus.txt
+        echo "scp -r CMSdata hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards" >> forsshtolxplus.txt
+    fi
     cat forsshtolxplus.txt | ssh -Y hroskes@lxplus5.cern.ch 
 fi
 
