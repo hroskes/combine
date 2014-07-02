@@ -525,7 +525,8 @@ class systematicsClass:
         systLine['ttH']  = "- " 
         systLine['qqZZ'] = "- " 
         systLine['ggZZ'] = "- "
-        systLine['zjets']= "{0}/{1} ".format(self.zjetKappaLow,self.zjetKappaHigh)
+        #systLine['zjets']= "{0}/{1} ".format(self.zjetKappaLow,self.zjetKappaHigh)
+        systLine['zjets']= "- "
         systLine['ttbar']= "- "
         systLine['zbb']  = "- "
         
@@ -542,7 +543,8 @@ class systematicsClass:
         systLine['ttH']  = "- " 
         systLine['qqZZ'] = "- " 
         systLine['ggZZ'] = "- "
-        systLine['zjets']= "{0}/{1} ".format(self.zjetKappaLow,self.zjetKappaHigh)
+        #systLine['zjets']= "{0}/{1} ".format(self.zjetKappaLow,self.zjetKappaHigh)
+        systLine['zjets']= "- "
         systLine['ttbar']= "- "
         systLine['zbb']  = "- "
         
@@ -559,7 +561,7 @@ class systematicsClass:
         systLine['ttH']  = "- " 
         systLine['qqZZ'] = "- " 
         systLine['ggZZ'] = "- "
-        systLine['zjets']= "{0}/{1} ".format(self.zjetKappaLow,self.zjetKappaHigh)
+        systLine['zjets']= "- "
         systLine['ttbar']= "- "
         systLine['zbb']  = "- "
         
