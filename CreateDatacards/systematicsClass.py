@@ -759,7 +759,8 @@ class systematicsClass:
             if theInputs['useScale']:
                 theFile.write("Scale4mu shape1 ")
                 self.Write_shape(theFile,theInputs)
-            if theInputs['useCMS_zz4l_zjet']:
+            #if theInputs['useCMS_zz4l_zjet']:
+            if False:
                 theFile.write("CMS_zz4l_smd_zjets_bkg_1 param 0  1  [-3,3]\n")
             
         if( self.channel == self.ID_4e):
@@ -780,7 +781,8 @@ class systematicsClass:
             if theInputs['useScale']:
                 theFile.write("Scale4e shape1 ")
                 self.Write_shape(theFile,theInputs)
-            if theInputs['useCMS_zz4l_zjet']:
+            #if theInputs['useCMS_zz4l_zjet']:
+            if False:
                 theFile.write("CMS_zz4l_smd_zjets_bkg_2 param 0  1  [-3,3]\n")
             
         if( self.channel == self.ID_2e2mu):
@@ -804,6 +806,7 @@ class systematicsClass:
             if theInputs['useScale']:
                 theFile.write("Scale2e2mu shape1 ")
                 self.Write_shape(theFile,theInputs)
-            if theInputs['useCMS_zz4l_zjet']:
+            #if theInputs['useCMS_zz4l_zjet']:
+            if False:
                 theFile.write("CMS_zz4l_smd_zjets_bkg_3 param 0  1  [-3,3]\n")
 
