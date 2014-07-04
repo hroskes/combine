@@ -12,6 +12,9 @@ fi
 
 if [ $extent -ge 100 ]
 then
+
+    #compile python code
+
     scram b
 fi
 
@@ -19,6 +22,9 @@ cd /scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateD
 
 if [ $extent -ge 90 ]
 then
+
+    #compile C++ code
+
     ./buildPackage.sh
 fi
 if [ $extent -ge 70 ]
@@ -26,19 +32,33 @@ then
     echo "cd /afs/cern.ch/user/h/hroskes/work/powheg/mHequalsmZ/combine/2dplots" > forsshtolxplus.txt
     if [ $extent -ge 80 ]
     then
+
+        #Get the rates from the trees
+
         echo "root -l -b -q getSumOfWeights.C+" >> forsshtolxplus.txt
         echo "root -l -b -q rateQQZZ.C+" >> forsshtolxplus.txt
         echo "scp -r /afs/cern.ch/work/h/hroskes/powheg/mHequalsmZ/combine/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards/SM_inputs_?TeV/ hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards" >> forsshtolxplus.txt
+
+        #find the discriminant
+
         echo "root -l -b -q findDiscriminant.C+" >> forsshtolxplus.txt
     fi
+
+    #make the templates
+
     echo "root -l -b -q make2dPlot.C+" >> forsshtolxplus.txt
     echo "scp -r templates2DHeshy_*TeV hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards" >> forsshtolxplus.txt
     if [ $extent -ge 77 ]
     then
+
+        #Run prepareData
+
         echo "cd /afs/cern.ch/user/h/hroskes/work/powheg/mHequalsmZ/combine/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs" >> forsshtolxplus.txt
+        echo "scp hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs/prepareDataFromUlascan.C ."
+        echo "scp hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs/Config.h ."
         echo "root -l -b -q prepareDataFromUlascan.C+" >> forsshtolxplus.txt
-        echo "cd ../CreateDatacards" >> forsshtolxplus.txt
-        echo "scp -r CMSdata hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards" >> forsshtolxplus.txt
+        echo "cd ../CreateDatacards/CMSdata" >> forsshtolxplus.txt
+        echo "scp -r *.root hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards/CMSdata" >> forsshtolxplus.txt
     fi
     cat forsshtolxplus.txt | ssh -Y hroskes@lxplus5.cern.ch 
 fi

@@ -608,4 +608,7 @@ int convertTreeForDatacards(TString inFile, TString outfile, bool useJET, bool V
   
 }
 
-
+void prepareDataFromUlascan()
+{
+    prepareData();
+}
