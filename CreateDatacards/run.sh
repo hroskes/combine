@@ -35,8 +35,7 @@ then
 
         #Get the rates from the trees
 
-        echo "root -l -b -q getSumOfWeights.C+" >> forsshtolxplus.txt
-        echo "root -l -b -q rateQQZZ.C+" >> forsshtolxplus.txt
+        echo "root -l -b -q setRates.C+" >> forsshtolxplus.txt
         echo "scp -r /afs/cern.ch/work/h/hroskes/powheg/mHequalsmZ/combine/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards/SM_inputs_?TeV/ hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards" >> forsshtolxplus.txt
 
         #find the discriminant
@@ -54,8 +53,8 @@ then
         #Run prepareData
 
         echo "cd /afs/cern.ch/user/h/hroskes/work/powheg/mHequalsmZ/combine/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs" >> forsshtolxplus.txt
-        echo "scp hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs/prepareDataFromUlascan.C ."
-        echo "scp hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs/Config.h ."
+        echo "scp hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs/prepareDataFromUlascan.C ." >> forsshtolxplus.txt
+        echo "scp hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/AnalysisInputs/Config.h ." >> forsshtolxplus.txt
         echo "root -l -b -q prepareDataFromUlascan.C+" >> forsshtolxplus.txt
         echo "cd ../CreateDatacards/CMSdata" >> forsshtolxplus.txt
         echo "scp -r *.root hroskes@hep.pha.jhu.edu:/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards/CMSdata" >> forsshtolxplus.txt
