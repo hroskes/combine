@@ -65,9 +65,17 @@ fi
 
 mkdir -p cards_HeshyExpected/HCG/91.2/
 mkdir -p cards_HeshyExpected/HCG_XSxBR/91.2/
+mkdir -p cards_HeshyObserved/HCG/91.2/
+mkdir -p cards_HeshyObserved/HCG_XSxBR/91.2/
 
 python make_prop_DCsandWSs.py -t "templates2DHeshy" -a "HeshyExpected" -b -m 1D -i SM_inputs_8TeV 2>&1 &&
 python make_prop_DCsandWSs.py -t "templates2DHeshy" -a "HeshyExpected" -b -m 1D -i SM_inputs_7TeV 2>&1
+if [ $? -ne 0 ]
+then
+    exit
+fi
+python make_prop_DCsandWSs.py -t "templates2DHeshy" -a "HeshyObserved" -b -m 1D -i SM_inputs_8TeV 2>&1 &&
+python make_prop_DCsandWSs.py -t "templates2DHeshy" -a "HeshyObserved" -b -m 1D -i SM_inputs_7TeV 2>&1
 if [ $? -ne 0 ]
 then
     exit
@@ -86,3 +94,13 @@ combineCards.py ./91.2/hzz4l_2e2muS_7TeV.txt ./91.2/hzz4l_4muS_7TeV.txt ./91.2/h
 text2workspace.py -m 91.2 hzz4l_allS_78TeV.txt -P HiggsAnalysis.CombinedLimit.SpinZeroStructure:spinZeroHiggs -o hzz4l_allS_fZ4l_78TeV.root --PO='' &&
 combine -M MultiDimFit hzz4l_allS_fZ4l_78TeV.root --algo=grid --points 200 -S 1 -m 91.2 -n obs_1D_fL1_PMF -v 3 --saveNLL --setPhysicsModelParameters r=1,CMS_zz4l_fai1=0 | tee log_obs_1D_fL1_PMF.log
 cd - > /dev/null
+
+cd plots/fromUlascan/
+root -l -b -q "plotScan_fL1_fa2fa3_fL10_vFixed_Obs_Exclusions_ANPAS.C+"
+cd - > /dev/null
+#http://root.cern.ch/phpBB3/viewtopic.php?t=9862
+#https://snipt.net/Miki/convert-eps-images-to-png-with-bash-and-imagemagick/
+for f in `ls plots/fromUlascan/*.eps`; do
+	convert -density 100 $f -flatten ${f%.*}.png;
+done 
+
