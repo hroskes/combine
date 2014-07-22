@@ -96,7 +96,7 @@ combine -M MultiDimFit hzz4l_allS_fZ4l_78TeV.root --algo=grid --points 200 -S 1 
 cd - > /dev/null
 
 cd plots/fromUlascan/
-root -l -b -q "plotScan_fL1_fa2fa3_fL10_vFixed_Obs_Exclusions_ANPAS.C+"
+root -l -b -q "makePlotScan.C+"
 cd - > /dev/null
 #http://root.cern.ch/phpBB3/viewtopic.php?t=9862
 #https://snipt.net/Miki/convert-eps-images-to-png-with-bash-and-imagemagick/

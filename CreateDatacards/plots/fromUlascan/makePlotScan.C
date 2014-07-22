@@ -14,7 +14,7 @@ using namespace std;
 TString fileExpected = "/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards/cards_HeshyExpected/HCG/higgsCombineobs_1D_fL1_PMF.MultiDimFit.mH91.2.root";
 TString fileObserved = "/scratch0/hep/hroskes/CMSSW_6_1_1/src/HiggsAnalysis/HZZ4l_Combination/CreateDatacards/cards_HeshyObserved/HCG/higgsCombineobs_1D_fL1_PMF.MultiDimFit.mH91.2.root";
 
-void plotScan_fL1_fa2fa3_fL10_vFixed_Obs_Exclusions_ANPAS(){
+void makePlotScan(){
   gROOT->ProcessLine(".x tdrstyle.cc");
   gStyle->SetPadLeftMargin(0.16);
   gStyle->SetPadTopMargin(0.05);
@@ -135,7 +135,7 @@ void plotScan_fL1_fa2fa3_fL10_vFixed_Obs_Exclusions_ANPAS(){
   gr[0]->GetYaxis()->SetLabelFont(42);
   gr[0]->GetXaxis()->SetTitleFont(42);
   gr[0]->GetYaxis()->SetTitleFont(42);
-  gr[0]->GetYaxis()->SetRangeUser(0., 400.);
+  gr[0]->GetYaxis()->SetRangeUser(0., 100.);
   gr[0]->GetXaxis()->SetRangeUser(0,1);
   gr[0]->Draw("AL");
   if(t[1]->GetEntries()!=0) gr[1]->Draw("lsame");
@@ -202,8 +202,8 @@ void plotScan_fL1_fa2fa3_fL10_vFixed_Obs_Exclusions_ANPAS(){
   l2->SetLineColor(kBlue);
   l2->DrawLine(0,3.84,1,3.84);
   l2->Draw("same");
-  leg->AddEntry(l1,"68\% CL");
-  leg->AddEntry(l2,"95\% CL");
+  leg->AddEntry(l1,"68\% CL","l");
+  leg->AddEntry(l2,"95\% CL","l");
 
   c1->SaveAs("plotScan.eps");
   c1->SaveAs("plotScan.pdf");
